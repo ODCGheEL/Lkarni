@@ -17,6 +17,8 @@ app.use(morgan('dev'));
 app.use("/api/users", usersRoutes)
 app.use("/api/lkridi", lkridiRoutes)
 
+const PORT = process.env.PORT || 4000
+
 async function startServer() {
     try {
         // Connect to MongoDB using Mongoose
@@ -24,7 +26,7 @@ async function startServer() {
         console.log("Connected to MongoDB 👌");
 
         // Start the Express server
-        app.listen(4000, () => console.log('Server running on port: 4000'));
+        app.listen(4000, () => console.log(`Server running on port: ${PORT}`));
     } catch (err) {
         console.error("Failed to connect to databases or start server", err);
     }
