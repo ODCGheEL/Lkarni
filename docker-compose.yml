@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: "mongo"
+    volumes:
+      - data:/data/db
+
+  backend:
+#    build: ./backend
+    image: ghizodak/lkarni-backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - logs:/app/logs
+      - ./backend:/app
+    depends_on:
+      - mongodb
+
+  frontend:
+#    build: ./frontend
+    image: ghizodak/lkarni-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/src:/app/src
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+
+volumes:
+  data:
+  logs:
