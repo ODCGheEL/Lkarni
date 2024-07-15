@@ -24,10 +24,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function fetchKridis() {
-      const result = await axios.get(
-        `${BACKEND_URL_LKRIDI}`,
-        config
-      );
+      const result = await axios.get(`${BACKEND_URL_LKRIDI}`, config);
       setKridiyat(result.data);
     }
     fetchKridis();
@@ -50,6 +47,7 @@ export default function Dashboard() {
             config
           );
           if (result.status === 204) {
+            navigate("/dashboard");
             navigate(0);
           }
         }
