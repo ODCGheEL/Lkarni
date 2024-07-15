@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { BACKEND_URL_USERS } from "../utils/exports";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export default function Register() {
   async function handleRegister(e) {
     e.preventDefault();
     const result = await axios.post(
-      "http://localhost:4000/api/users/register",
+      `${BACKEND_URL_USERS}/register`,
       {
         name,
         email,

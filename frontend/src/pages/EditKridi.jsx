@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { BACKEND_URL_LKRIDI } from "../utils/exports";
 
 export default function EditKridi() {
   const { id } = useParams();
@@ -21,7 +22,7 @@ export default function EditKridi() {
   useEffect(() => {
     async function fetchKridi() {
       const result = await axios.get(
-        "http://localhost:4000/api/lkridi/" + id,
+        `${BACKEND_URL_LKRIDI}/${id}`,
         config
       );
       console.log(result);
@@ -37,7 +38,7 @@ export default function EditKridi() {
     e.preventDefault();
     try {
       const result = await axios.put(
-        "http://localhost:4000/api/lkridi/" + id,
+        `${BACKEND_URL_LKRIDI}/${id}`,
         {
           title,
           description,

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { BACKEND_URL_LKRIDI } from "../utils/exports";
 
 export default function AddKridi() {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ export default function AddKridi() {
     };
 
     const result = await axios.post(
-      "http://localhost:4000/api/lkridi",
+      `${BACKEND_URL_LKRIDI}`,
       {
         title,
         description,

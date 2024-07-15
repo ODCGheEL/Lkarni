@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URL_USERS } from "../utils/exports";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ export default function NavBar() {
     async function fetchUser() {
       if (user) {
         const result = await axios.get(
-          "http://localhost:4000/api/users/" + user.userId
+          `${BACKEND_URL_USERS}/${user.userId}`,
         );
         setLoggedUser(result.data);
       }

@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useAuth } from "../context/AuthContext";
+import { BACKEND_URL_USERS } from "../utils/exports";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function Login() {
   async function handleLogin(e) {
     e.preventDefault();
     try {
-      const result = await axios.post("http://localhost:4000/api/users/login", {
+      const result = await axios.post(`${BACKEND_URL_USERS}/login`, {
         email,
         password,
       });

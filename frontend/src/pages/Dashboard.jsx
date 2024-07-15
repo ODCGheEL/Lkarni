@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { BACKEND_URL_LKRIDI } from "../utils/exports";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export default function Dashboard() {
   useEffect(() => {
     async function fetchKridis() {
       const result = await axios.get(
-        "http://localhost:4000/api/lkridi",
+        `${BACKEND_URL_LKRIDI}`,
         config
       );
       setKridiyat(result.data);
@@ -45,7 +46,7 @@ export default function Dashboard() {
       .then(async (result) => {
         if (result.isConfirmed) {
           const result = await axios.delete(
-            "http://localhost:4000/api/lkridi/" + id,
+            `${BACKEND_URL_LKRIDI}/${id}`,
             config
           );
           if (result.status === 204) {
