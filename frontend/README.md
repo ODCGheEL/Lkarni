@@ -1,8 +1,17 @@
-# React + Vite
+# Lkarni
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A MERN stack application with Prisma for loan management, dockerized using Docker Compose.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User authentication (login and register)
+- CRUD operations for loans
+- Browse loans in a table
+
+## Technologies Used
+
+- MERN Stack: MongoDB, Express.js, React.js, Node.js
+- Prisma ORM
+- Docker and Docker Compose
+- React Bootstrap and Bootstrap
+- React Icons
