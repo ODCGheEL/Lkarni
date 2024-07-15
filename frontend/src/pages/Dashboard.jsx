@@ -47,7 +47,7 @@ export default function Dashboard() {
             config
           );
           if (result.status === 204) {
-            navigate("https://lkarni-frontend.onrender.com/dashboard");
+            navigate("/");
           }
         }
       })
