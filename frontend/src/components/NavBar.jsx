@@ -7,7 +7,7 @@ import { useAuth } from "../context/AuthContext";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BACKEND_URL_USERS } from "../utils/exports";
 
 export default function NavBar() {
@@ -48,14 +48,14 @@ export default function NavBar() {
               <Nav>
                 {user && (
                   <>
-                    <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+                    <Link to="/dashboard">Dashboard</Link>
                     <Button onClick={handleLogout}>Logout</Button>
                   </>
                 )}
                 {!user && (
                   <>
-                    <Nav.Link href="/login">Login</Nav.Link>
-                    <Nav.Link href="/register">Register</Nav.Link>
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
                   </>
                 )}
               </Nav>
