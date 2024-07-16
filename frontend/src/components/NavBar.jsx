@@ -43,7 +43,7 @@ export default function NavBar() {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav>
+              <Nav className=" d-flex align-items-center">
                 {user && (
                   <>
                     <Link to="/dashboard">Dashboard</Link>
@@ -52,8 +52,12 @@ export default function NavBar() {
                 )}
                 {!user && (
                   <>
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
+                    <Link to="/login" className="ms-2">
+                      Login
+                    </Link>
+                    <Link to="/register" className="ms-2">
+                      Register
+                    </Link>
                   </>
                 )}
               </Nav>
