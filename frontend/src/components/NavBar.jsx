@@ -29,6 +29,7 @@ export default function NavBar() {
   async function handleLogout() {
     logout();
     navigate("/login");
+    setLoggedUser(null);
   }
 
   return (
