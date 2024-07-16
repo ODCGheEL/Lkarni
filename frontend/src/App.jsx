@@ -13,6 +13,7 @@ import NavBar from "./components/NavBar";
 import AuthRoutes from "./utils/AuthRoutes";
 import AddKridi from "./pages/AddKridi";
 import EditKridi from "./pages/EditKridi";
+import LoginRoute from "./utils/LoginRoute";
 
 function App() {
   return (
@@ -21,8 +22,11 @@ function App() {
       <div className="container mx-auto mt-4">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
+          <Route element={<LoginRoute />}>
+            <Route path="/login" element={<Login />} />
+          </Route>
 
           <Route element={<AuthRoutes />}>
             <Route path="/dashboard" element={<Dashboard />} />
