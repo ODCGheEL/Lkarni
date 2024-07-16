@@ -19,9 +19,7 @@ export default function NavBar() {
   useEffect(() => {
     async function fetchUser() {
       if (user) {
-        const result = await axios.get(
-          `${BACKEND_URL_USERS}/${user.userId}`,
-        );
+        const result = await axios.get(`${BACKEND_URL_USERS}/${user.userId}`);
         setLoggedUser(result.data);
       }
     }
@@ -29,9 +27,8 @@ export default function NavBar() {
   }, [user]);
 
   async function handleLogout() {
-    await logout();
+    logout();
     navigate("/login");
-    navigate(0);
   }
 
   return (
